@@ -14,6 +14,7 @@ public:
     QBrush bombImage;
     QBrush ExplosionImage;
     QBrush flagImage;
+    QBrush questionImage;
     QBrush num1Image;
     QBrush num2Image;
     QBrush num3Image;

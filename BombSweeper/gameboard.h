@@ -3,10 +3,10 @@
 
 #include <QTableWidget>
 #include "cellbrushclass.h"
+#include "gamecell.h"
 class GameBoard : public QTableWidget
 {
     Q_OBJECT
-
 public:
     explicit GameBoard(QWidget *parent = 0);
     ~GameBoard();
@@ -14,11 +14,18 @@ public:
     void refresh();
     void SetNumberRowsColumns(int rows, int columns);
 
+private slots:
+    void mouseReleaseEvent(QMouseEvent *e);
+    void gameCellSelected(int row, int column);
+
 private:
     CellBrushClass* cellBrush;
 
     int rows = 25;
     int columns = 25;
+    std::vector<std::vector<GameCell*>> cellVector;
+    int currentRow = 0;
+    int currentColumn = 0;
 };
 
 #endif // GAMEBOARD_H

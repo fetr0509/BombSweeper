@@ -77,8 +77,28 @@ QTableView::item
    <class>GameBoard</class>
    <extends>QTableWidget</extends>
    <header>gameboard.h</header>
+   <slots>
+    <slot>gameCellSelected(int,int)</slot>
+   </slots>
   </customwidget>
  </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>tableWidget</sender>
+   <signal>cellPressed(int,int)</signal>
+   <receiver>tableWidget</receiver>
+   <slot>gameCellSelected(int,int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>442</x>
+     <y>233</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>446</x>
+     <y>183</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

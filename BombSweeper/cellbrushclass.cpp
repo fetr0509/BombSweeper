@@ -2,60 +2,59 @@
 
 CellBrushClass::CellBrushClass(int cellSize)
 {
-
-    QPixmap map(":/images/images/HiddenCell.png");
-    map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);
-    QBrush brush(map);
-
     QPixmap map(":/images/images/HiddenCell.png");
     map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);
     hiddenImage = QBrush(map);
 
     map = QPixmap(":/images/images/HiddenCell.png");
     map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);
-    revealedImage(map);
+    revealedImage = QBrush(map);
+
+    map = QPixmap(":/images/images/BombCell.png");
+    map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);
+    bombImage = QBrush(map);
 
     map = QPixmap(":/images/images/HiddenCell.png");
     map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);
-    bombImage(map);
+    ExplosionImage = QBrush(map);
 
-    map = QPixmap(":/images/images/HiddenCell.png");
+    map = QPixmap(":/images/images/FlagCell.png");
     map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);
-    ExplosionImage(map);
+    flagImage = QBrush(map);
 
-    map = QPixmap(":/images/images/HiddenCell.png");
+    map = QPixmap(":/images/images/QuestionCell.png");
     map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);
-    flagImage(map);
+    questionImage = QBrush(map);
 
-    map = QPixmap(":/images/images/HiddenCell.png");
+    map = QPixmap(":/images/images/Num1Cell.png");
     map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);
-    num1Image(map);
+    num1Image = QBrush(map);
 
-    map = QPixmap(":/images/images/HiddenCell.png");
+    map = QPixmap(":/images/images/Num2Cell.png");
     map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);
-    num2Image(map);
+    num2Image = QBrush(map);
 
-    map = QPixmap(":/images/images/HiddenCell.png");
+    map = QPixmap(":/images/images/Num2Cell.png");
     map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);
-    num3Image(map);
+    num3Image = QBrush(map);
 
-    map = QPixmap(":/images/images/HiddenCell.png");
+    map = QPixmap(":/images/images/Num2Cell.png");
     map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);
-    num4Image(map);
+    num4Image = QBrush(map);
 
-    map = QPixmap(":/images/images/HiddenCell.png");
+    map = QPixmap(":/images/images/Num2Cell.png");
     map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);
-    num5Image(map);
+    num5Image = QBrush(map);
 
-    map = QPixmap(":/images/images/HiddenCell.png");
+    map = QPixmap(":/images/images/Num2Cell.png");
     map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);
-    num6Image(map);
+    num6Image = QBrush(map);
 
-    map = QPixmap(":/images/images/HiddenCell.png");
+    map = QPixmap(":/images/images/Num2Cell.png");
     map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);
-    num7Image(map);
+    num7Image = QBrush(map);
 
-    map = QPixmap(":/images/images/HiddenCell.png");
+    map = QPixmap(":/images/images/Num2Cell.png");
     map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);
-    num8Image(map);
+    num8Image = QBrush(map);
 }

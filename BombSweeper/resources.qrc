@@ -1,5 +1,16 @@
 <RCC>
     <qresource prefix="/images">
         <file>images/HiddenCell.png</file>
+        <file>images/BombCell.png</file>
+        <file>images/FlagCell.png</file>
+        <file>images/Num1Cell.png</file>
+        <file>images/Num2Cell.png</file>
+        <file>images/Num3Cell.png</file>
+        <file>images/Num4Cell.png</file>
+        <file>images/Num5Cell.png</file>
+        <file>images/Num6Cell.png</file>
+        <file>images/Num7Cell.png</file>
+        <file>images/Num8Cell.png</file>
+        <file>images/QuestionCell.png</file>
     </qresource>
 </RCC>
