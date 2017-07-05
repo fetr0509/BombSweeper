@@ -11,7 +11,12 @@ public:
     GameCell(CellBrushClass* cellBrush);
 
     void setCellHidden();
+    void setAsBomb();
+    void setNeighborBombCount(int bombs);
+
     void rightClick();
+    void leftClick();
+
     bool isRevealed();
 
 private:
@@ -28,9 +33,10 @@ private:
     CellBrushClass* cellBrush;
 
     bool Revealed = false;
-    bool Bomb = false;
-    bool isLeftClick = false;
-    int neighborbombs = 0;
+    bool isBombCell = false;
+    int neighborbombCount = 0;
+
+    void setIconForBombCount();
 };
 
 #endif // GAMECELL_H

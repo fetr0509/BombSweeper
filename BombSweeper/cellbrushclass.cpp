@@ -6,6 +6,10 @@ CellBrushClass::CellBrushClass(int cellSize)
     map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);
     hiddenImage = QBrush(map);
 
+    map = QPixmap(":/images/images/BlankCell.png");
+    map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);
+    blankImage = QBrush(map);
+
     map = QPixmap(":/images/images/HiddenCell.png");
     map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);
     revealedImage = QBrush(map);

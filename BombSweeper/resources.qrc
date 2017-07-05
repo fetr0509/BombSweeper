@@ -12,5 +12,6 @@
         <file>images/Num7Cell.png</file>
         <file>images/Num8Cell.png</file>
         <file>images/QuestionCell.png</file>
+        <file>images/BlankCell.png</file>
     </qresource>
 </RCC>

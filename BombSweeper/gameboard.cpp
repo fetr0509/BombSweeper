@@ -51,13 +51,19 @@ void GameBoard::SetNumberRowsColumns(int rows, int columns)
 
 void GameBoard::mouseReleaseEvent(QMouseEvent* e)
 {
+    GameCell* cell = cellVector[currentRow][currentColumn];
+
     if (e->button() == Qt::RightButton) {
         qDebug("right");
-        cellVector[currentRow][currentColumn]->rightClick();
+        cell->rightClick();
         QTableWidget::mousePressEvent(e);
     }
     else {
         qDebug("left");
+        if(!cell->isRevealed())
+        {
+            cell->leftClick();
+        }
         QTableWidget::mousePressEvent(e);
     }
 }

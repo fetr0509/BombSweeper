@@ -10,6 +10,7 @@ public:
     CellBrushClass(int cellSize);
 
     QBrush hiddenImage;
+    QBrush blankImage;
     QBrush revealedImage;
     QBrush bombImage;
     QBrush ExplosionImage;

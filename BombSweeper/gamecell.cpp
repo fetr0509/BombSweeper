@@ -8,6 +8,54 @@ GameCell::GameCell(CellBrushClass* cellBrush)
     this->setFlags(this->flags() & ~Qt::ItemIsSelectable);
 }
 
+void GameCell::setCellHidden()
+{
+    this->setBackground(cellBrush->hiddenImage);
+}
+
+void GameCell::setAsBomb()
+{
+    isBombCell = true;
+}
+
+void GameCell::setNeighborBombCount(int bombs)
+{
+    neighborbombCount = bombs;
+}
+
+void GameCell::setIconForBombCount()
+{
+    switch (neighborbombCount) {
+    case 0:
+        this->setBackground(cellBrush->blankImage);
+        break;
+    case 1:
+        this->setBackground(cellBrush->num1Image);
+        break;
+    case 2:
+        this->setBackground(cellBrush->num2Image);
+        break;
+    case 3:
+        this->setBackground(cellBrush->num3Image);
+        break;
+    case 4:
+        this->setBackground(cellBrush->num4Image);
+        break;
+    case 5:
+        this->setBackground(cellBrush->num5Image);
+        break;
+    case 6:
+        this->setBackground(cellBrush->num6Image);
+        break;
+    case 7:
+        this->setBackground(cellBrush->num7Image);
+        break;
+    default:
+        this->setBackground(cellBrush->num8Image);
+        break;
+    }
+}
+
 void GameCell::rightClick()
 {
     switch(CurrentState)
@@ -29,7 +77,20 @@ void GameCell::rightClick()
     }
 }
 
-void GameCell::setCellHidden()
+void GameCell::leftClick()
 {
-    this->setBackground(cellBrush->hiddenImage);
+    switch(CurrentState)
+    {
+    case REVEALED:
+        break;
+    default:
+        setIconForBombCount();
+        CurrentState = REVEALED;
+        break;
+    }
+}
+
+bool GameCell::isRevealed()
+{
+    return Revealed;
 }
