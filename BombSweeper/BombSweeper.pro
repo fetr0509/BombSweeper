@@ -13,8 +13,17 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    gameboard.cpp \
+    gamecell.cpp \
+    cellbrushclass.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    gameboard.h \
+    gamecell.h \
+    cellbrushclass.h
 
 FORMS    += mainwindow.ui
+
+RESOURCES += \
+    resources.qrc
