@@ -4,6 +4,8 @@
 #include <QTableWidget>
 #include "cellbrush.h"
 #include "gamecell.h"
+#include "gamelogic.h"
+
 class GameBoard : public QTableWidget
 {
     Q_OBJECT

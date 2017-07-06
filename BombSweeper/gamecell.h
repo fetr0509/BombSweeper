@@ -18,7 +18,7 @@ public:
     void leftClick();
 
     bool isRevealed();
-    bool isbombCell();
+    bool isBombCell();
 
     int getNeighborbombCount();
     int getRow();

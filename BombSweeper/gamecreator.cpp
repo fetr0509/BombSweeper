@@ -13,7 +13,7 @@ void GameCreator::createGame(std::vector<std::vector<GameCell *> > &gameBoard, i
         int randRow = rand() % rows;
         int randColumn = rand() % columns;
         currentCell = gameBoard[randRow][randColumn];
-        if(currentCell->isbombCell() == false)
+        if(currentCell->isBombCell() == false)
         {
             currentCell->setAsBomb();
             bombs.push_back(currentCell);
@@ -37,21 +37,21 @@ void GameCreator::addNumbers(std::vector<std::vector<GameCell *> > &gameBoard, s
         int column = bomb->getColumn();
 
         // Cardinal Directions
-        if(row-1 > 0)
+        if(row-1 >= 0)
             gameBoard[row-1][column]->incrementNeighborBombCount();
         if(row+1 < totalRows)
             gameBoard[row+1][column]->incrementNeighborBombCount();
-        if(column-1 > 0)
+        if(column-1 >= 0)
             gameBoard[row][column-1]->incrementNeighborBombCount();
         if(column+1 < totalColumns)
             gameBoard[row][column+1]->incrementNeighborBombCount();
 
         // Diagonals
-        if(row-1 > 0 && column-1 > 0)
+        if(row-1 >= 0 && column-1 >= 0)
             gameBoard[row-1][column-1]->incrementNeighborBombCount();
-        if(row+1 < totalRows && column-1 > 0)
+        if(row+1 < totalRows && column-1 >= 0)
             gameBoard[row+1][column-1]->incrementNeighborBombCount();
-        if(row-1 > 0 && column+1 < totalColumns)
+        if(row-1 >= 0 && column+1 < totalColumns)
             gameBoard[row-1][column+1]->incrementNeighborBombCount();
         if(row+1 < totalRows && column+1 < totalColumns)
             gameBoard[row+1][column+1]->incrementNeighborBombCount();

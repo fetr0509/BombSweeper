@@ -90,6 +90,7 @@ void GameCell::leftClick()
             this->setBackground(cellBrush->bombImage);
         else
             setIconForBombCount();
+        revealed = true;
         CurrentState = REVEALED;
         break;
     }
@@ -100,7 +101,7 @@ bool GameCell::isRevealed()
     return revealed;
 }
 
-bool GameCell::isbombCell()
+bool GameCell::isBombCell()
 {
     return bombCell;
 }

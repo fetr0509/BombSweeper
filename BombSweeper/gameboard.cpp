@@ -68,6 +68,7 @@ void GameBoard::mouseReleaseEvent(QMouseEvent* e)
         if(!cell->isRevealed())
         {
             cell->leftClick();
+            GameLogic::handleCellRevealed(cellVector,cell);
         }
         QTableWidget::mousePressEvent(e);
     }
