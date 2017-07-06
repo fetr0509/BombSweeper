@@ -1,9 +1,11 @@
 #include "gamecell.h"
 #include <QMouseEvent>
 
-GameCell::GameCell(CellBrush* cellBrush)
+GameCell::GameCell(CellBrush* cellBrush, int row, int column)
 {
     this->cellBrush = cellBrush;
+    this->row = row;
+    this->column = column;
     setCellHidden();
     this->setFlags(this->flags() & ~Qt::ItemIsSelectable);
 }
@@ -18,9 +20,9 @@ void GameCell::setAsBomb()
     bombCell = true;
 }
 
-void GameCell::setNeighborBombCount(int bombs)
+void GameCell::incrementNeighborBombCount()
 {
-    neighborbombCount = bombs;
+    neighborbombCount += 1;
 }
 
 void GameCell::setIconForBombCount()
@@ -84,7 +86,10 @@ void GameCell::leftClick()
     case REVEALED:
         break;
     default:
-        setIconForBombCount();
+        if(this->bombCell)
+            this->setBackground(cellBrush->bombImage);
+        else
+            setIconForBombCount();
         CurrentState = REVEALED;
         break;
     }
@@ -103,4 +108,14 @@ bool GameCell::isbombCell()
 int GameCell::getNeighborbombCount()
 {
     return neighborbombCount;
+}
+
+int GameCell::getRow()
+{
+    return row;
+}
+
+int GameCell::getColumn()
+{
+    return column;
 }

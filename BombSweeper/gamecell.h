@@ -8,11 +8,11 @@
 class GameCell : public QTableWidgetItem
 {
 public:
-    GameCell(CellBrush* cellBrush);
+    GameCell(CellBrush* cellBrush,int row,int column);
 
     void setCellHidden();
     void setAsBomb();
-    void setNeighborBombCount(int bombs);
+    void incrementNeighborBombCount();
 
     void rightClick();
     void leftClick();
@@ -21,6 +21,8 @@ public:
     bool isbombCell();
 
     int getNeighborbombCount();
+    int getRow();
+    int getColumn();
 private:
 
     enum cellState
@@ -36,6 +38,9 @@ private:
 
     bool revealed = false;
     bool bombCell = false;
+
+    int row;
+    int column;
     int neighborbombCount = 0;
 
     void setIconForBombCount();

@@ -11,7 +11,7 @@ public:
 
 private:
     static void placeBombs(std::vector<std::vector<GameCell*>> &gameBoard, int numBombs);
-    static void addNumbers(std::vector<std::vector<GameCell*>> &gameBoard, vector<GameCell*> bombs);
+    static void addNumbers(std::vector<std::vector<GameCell*>> &gameBoard, std::vector<GameCell*> bombs);
 };
 
 #endif // GAMECREATOR_H

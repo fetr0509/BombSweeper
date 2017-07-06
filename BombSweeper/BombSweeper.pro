@@ -17,13 +17,15 @@ SOURCES += main.cpp\
     gameboard.cpp \
     gamecell.cpp \
     cellbrush.cpp \
-    gamecreator.cpp
+    gamecreator.cpp \
+    gamelogic.cpp
 
 HEADERS  += mainwindow.h \
     gameboard.h \
     gamecell.h \
     cellbrush.h \
-    gamecreator.h
+    gamecreator.h \
+    gamelogic.h
 
 FORMS    += mainwindow.ui
 

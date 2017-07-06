@@ -6,6 +6,7 @@
 #include "gamecell.h"
 #include "cellbrush.h"
 #include <QMouseEvent>
+#include "gamecreator.h"
 
 #define GAMECELLSIZE 20
 
@@ -34,12 +35,16 @@ void GameBoard::refresh()
         std::vector<GameCell*> cellRow;
         for(int column = 0; column < columns; column++)
         {
-            GameCell* cell = new GameCell(cellBrush);
+            GameCell* cell = new GameCell(cellBrush,row,column);
             cellRow.push_back(cell);
             setItem(row, column, cell);
         }
         cellVector.push_back(cellRow);
     }
+    //testing, remove later
+    srand(time(NULL));
+    //
+    GameCreator::createGame(cellVector,this->numberBombs,rand());
 
 }
 
