@@ -4,10 +4,10 @@
 #include <QPixmap>
 #include <QBrush>
 
-class CellBrushClass
+class CellBrush
 {
 public:
-    CellBrushClass(int cellSize);
+    CellBrush(int cellSize);
 
     QBrush hiddenImage;
     QBrush blankImage;

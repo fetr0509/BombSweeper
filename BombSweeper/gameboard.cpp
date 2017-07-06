@@ -4,7 +4,7 @@
 #include <QHeaderView>
 #include <QTableWidget>
 #include "gamecell.h"
-#include "cellbrushclass.h"
+#include "cellbrush.h"
 #include <QMouseEvent>
 
 #define GAMECELLSIZE 20
@@ -16,7 +16,7 @@ GameBoard::GameBoard (QWidget *parent) : QTableWidget(parent)
     this->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
     this->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
     this->setFocusPolicy(Qt::NoFocus);
-    cellBrush = new CellBrushClass(GAMECELLSIZE);
+    cellBrush = new CellBrush(GAMECELLSIZE);
 
     refresh();
 }

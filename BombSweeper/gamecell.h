@@ -3,12 +3,12 @@
 
 #include <QWidget>
 #include <QTableWidgetItem>
-#include "cellbrushclass.h"
+#include "cellbrush.h"
 
 class GameCell : public QTableWidgetItem
 {
 public:
-    GameCell(CellBrushClass* cellBrush);
+    GameCell(CellBrush* cellBrush);
 
     void setCellHidden();
     void setAsBomb();
@@ -18,7 +18,9 @@ public:
     void leftClick();
 
     bool isRevealed();
+    bool isbombCell();
 
+    int getNeighborbombCount();
 private:
 
     enum cellState
@@ -30,10 +32,10 @@ private:
        };
 
     cellState CurrentState = HIDDEN;
-    CellBrushClass* cellBrush;
+    CellBrush* cellBrush;
 
-    bool Revealed = false;
-    bool isBombCell = false;
+    bool revealed = false;
+    bool bombCell = false;
     int neighborbombCount = 0;
 
     void setIconForBombCount();

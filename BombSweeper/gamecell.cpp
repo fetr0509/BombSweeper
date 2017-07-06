@@ -1,7 +1,7 @@
 #include "gamecell.h"
 #include <QMouseEvent>
 
-GameCell::GameCell(CellBrushClass* cellBrush)
+GameCell::GameCell(CellBrush* cellBrush)
 {
     this->cellBrush = cellBrush;
     setCellHidden();
@@ -15,7 +15,7 @@ void GameCell::setCellHidden()
 
 void GameCell::setAsBomb()
 {
-    isBombCell = true;
+    bombCell = true;
 }
 
 void GameCell::setNeighborBombCount(int bombs)
@@ -92,5 +92,15 @@ void GameCell::leftClick()
 
 bool GameCell::isRevealed()
 {
-    return Revealed;
+    return revealed;
+}
+
+bool GameCell::isbombCell()
+{
+    return bombCell;
+}
+
+int GameCell::getNeighborbombCount()
+{
+    return neighborbombCount;
 }

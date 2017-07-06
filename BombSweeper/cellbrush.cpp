@@ -1,6 +1,6 @@
-#include "cellbrushclass.h"
+#include "cellbrush.h"
 
-CellBrushClass::CellBrushClass(int cellSize)
+CellBrush::CellBrush(int cellSize)
 {
     QPixmap map(":/images/images/HiddenCell.png");
     map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);

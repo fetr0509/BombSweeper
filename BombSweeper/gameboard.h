@@ -2,7 +2,7 @@
 #define GAMEBOARD_H
 
 #include <QTableWidget>
-#include "cellbrushclass.h"
+#include "cellbrush.h"
 #include "gamecell.h"
 class GameBoard : public QTableWidget
 {
@@ -19,7 +19,7 @@ private slots:
     void gameCellSelected(int row, int column);
 
 private:
-    CellBrushClass* cellBrush;
+    CellBrush* cellBrush;
 
     int rows = 25;
     int columns = 25;
