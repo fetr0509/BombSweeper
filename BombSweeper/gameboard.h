@@ -25,7 +25,7 @@ private:
 
     int rows = 25;
     int columns = 25;
-    int numberBombs = 50;
+    int numberBombs = 150;
     std::vector<std::vector<GameCell*>> cellVector;
     int currentRow = 0;
     int currentColumn = 0;

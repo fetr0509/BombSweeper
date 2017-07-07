@@ -11,7 +11,7 @@ void GameLogic::handleCellRevealed(std::vector<std::vector<GameCell *> > &gameBo
         GameCell *currentCell = (cellMap.begin())->second;
         cellMap.erase(cellMap.begin());
         currentCell->leftClick();
-        if(currentCell->getNeighborbombCount() == 0)
+        if(currentCell->getNeighborbombCount() == 0 && !currentCell->isBombCell())
             addNeigbors(gameBoard,currentCell,cellMap);
         count++;
     }
@@ -31,30 +31,30 @@ void GameLogic::addNeigbors(std::vector<std::vector<GameCell*>> &gameBoard,
         if(gameBoard[row-1][column]->isRevealed() == false && !gameBoard[row-1][column]->isBombCell())
             cellMap[getHashCode(row-1,column)] = (gameBoard[row-1][column]);
     if(row+1 < totalRows)
-        if(gameBoard[row+1][column]->isRevealed() == false && !gameBoard[row-1][column]->isBombCell())
+        if(gameBoard[row+1][column]->isRevealed() == false && !gameBoard[row+1][column]->isBombCell())
             cellMap[getHashCode(row+1,column)] = (gameBoard[row+1][column]);
     if(column-1 >= 0)
-        if(gameBoard[row][column]->isRevealed() == false && !gameBoard[row-1][column]->isBombCell())
+        if(gameBoard[row][column-1]->isRevealed() == false && !gameBoard[row][column-1]->isBombCell())
             cellMap[getHashCode(row-1,column-1)] = (gameBoard[row][column-1]);
     if(column+1 < totalColumns)
-        if(gameBoard[row][column]->isRevealed() == false && !gameBoard[row-1][column]->isBombCell())
+        if(gameBoard[row][column+1]->isRevealed() == false && !gameBoard[row][column+1]->isBombCell())
             cellMap[getHashCode(row-1,column+1)] = (gameBoard[row][column+1]);
 
     // Diagonals
     if(row-1 >= 0 && column-1 >= 0)
-        if(gameBoard[row-1][column-1]->isRevealed() == false && !gameBoard[row-1][column]->isBombCell())
+        if(gameBoard[row-1][column-1]->isRevealed() == false && !gameBoard[row-1][column-1]->isBombCell())
             cellMap[getHashCode(row-1,column-1)] = (gameBoard[row-1][column-1]);
 
     if(row+1 < totalRows && column-1 >= 0)
-        if(gameBoard[row+1][column-1]->isRevealed() == false && !gameBoard[row-1][column]->isBombCell())
+        if(gameBoard[row+1][column-1]->isRevealed() == false && !gameBoard[row+1][column-1]->isBombCell())
             cellMap[getHashCode(row+1,column-1)] = (gameBoard[row+1][column-1]);
 
     if(row-1 >= 0 && column+1 < totalColumns)
-        if(gameBoard[row-1][column+1]->isRevealed() == false && !gameBoard[row-1][column]->isBombCell())
+        if(gameBoard[row-1][column+1]->isRevealed() == false && !gameBoard[row-1][column+1]->isBombCell())
             cellMap[getHashCode(row-1,column+1)] = (gameBoard[row-1][column+1]);
 
     if(row+1 < totalRows && column+1 < totalColumns)
-        if(gameBoard[row+1][column+1]->isRevealed() == false && !gameBoard[row-1][column]->isBombCell())
+        if(gameBoard[row+1][column+1]->isRevealed() == false && !gameBoard[row+1][column+1]->isBombCell())
             cellMap[getHashCode(row+1,column+1)] = (gameBoard[row+1][column+1]);
     return;
 }

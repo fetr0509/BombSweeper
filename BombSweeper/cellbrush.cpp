@@ -38,27 +38,27 @@ CellBrush::CellBrush(int cellSize)
     map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);
     num2Image = QBrush(map);
 
-    map = QPixmap(":/images/images/Num2Cell.png");
+    map = QPixmap(":/images/images/Num3Cell.png");
     map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);
     num3Image = QBrush(map);
 
-    map = QPixmap(":/images/images/Num2Cell.png");
+    map = QPixmap(":/images/images/Num4Cell.png");
     map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);
     num4Image = QBrush(map);
 
-    map = QPixmap(":/images/images/Num2Cell.png");
+    map = QPixmap(":/images/images/Num5Cell.png");
     map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);
     num5Image = QBrush(map);
 
-    map = QPixmap(":/images/images/Num2Cell.png");
+    map = QPixmap(":/images/images/Num6Cell.png");
     map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);
     num6Image = QBrush(map);
 
-    map = QPixmap(":/images/images/Num2Cell.png");
+    map = QPixmap(":/images/images/Num7Cell.png");
     map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);
     num7Image = QBrush(map);
 
-    map = QPixmap(":/images/images/Num2Cell.png");
+    map = QPixmap(":/images/images/Num8Cell.png");
     map = map.scaled(cellSize,cellSize,Qt::IgnoreAspectRatio,Qt::FastTransformation);
     num8Image = QBrush(map);
 }

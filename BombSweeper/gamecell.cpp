@@ -22,7 +22,7 @@ void GameCell::setAsBomb()
 
 void GameCell::incrementNeighborBombCount()
 {
-    neighborbombCount += 1;
+    neighborbombCount++;
 }
 
 void GameCell::setIconForBombCount()
